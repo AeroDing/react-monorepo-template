@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "catalog:",
+    "@ant-design/pro-components": "catalog:",
     "ahooks": "catalog:",
     "antd": "catalog:",
     "dayjs": "catalog:",
@@ -19,7 +20,8 @@
     "react-dom": "catalog:",
     "react-hook-form": "catalog:",
     "react-number-format": "catalog:",
-    "react-router-dom": "catalog:"
+    "react-router-dom": "catalog:",
+    "zustand": "catalog:"
   },
   "devDependencies": {
     "@types/node": "catalog:",
