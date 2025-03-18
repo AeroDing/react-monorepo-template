@@ -1,3 +1,4 @@
+import { routerUtils } from '@/router/utils'
 import { Button, Card, Form, Input, Typography } from 'antd'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -14,8 +15,15 @@ const Login: React.FC = () => {
   const [form] = Form.useForm<LoginForm>()
 
   const handleSubmit = async (_values: LoginForm): Promise<void> => {
-    // TODO: 实现登录逻辑
-    navigate('/')
+    // 模拟登录成功后获取token
+    const token = 'mock-token'
+    // 将token存储到localStorage中
+    localStorage.setItem('token', token)
+
+    // 获取之前保存的重定向地址，如果没有则跳转到项目列表页
+    const params = new URLSearchParams(window.location.search)
+    const redirectTo = params.get('redirect') || '/projectList'
+    routerUtils.navigateWithParams(navigate, redirectTo)
   }
 
   return (

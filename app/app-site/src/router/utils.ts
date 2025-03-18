@@ -13,10 +13,15 @@ export const routerUtils = {
   navigateWithParams: (
     navigate: NavigateFunction,
     path: string,
-    params: Record<string, string>,
+    params?: Record<string, string>,
   ): void => {
-    const searchParams = new URLSearchParams(params)
-    navigate(`${path}?${searchParams.toString()}`)
+    if (params && Object.keys(params).length > 0) {
+      const searchParams = new URLSearchParams(params)
+      navigate(`${path}?${searchParams.toString()}`)
+    }
+    else {
+      navigate(path)
+    }
   },
 
   /**

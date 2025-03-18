@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { Navigate, useLocation } from 'react-router-dom'
 
 interface RouteGuardProps {
@@ -8,16 +8,45 @@ interface RouteGuardProps {
 
 const RouteGuard: React.FC<RouteGuardProps> = ({ children, requireAuth = false }) => {
   const location = useLocation()
-  const isAuthenticated = localStorage.getItem('token') // 这里根据实际情况修改认证判断逻辑
 
-  if (requireAuth && !isAuthenticated) {
-    // 需要认证但未登录，重定向到登录页
-    return <Navigate to="/login" state={{ from: location }} replace />
-  }
+  // 使用 useMemo 缓存认证状态的初始值
+  const initialAuthState = useMemo(() => {
+    const token = localStorage.getItem('token')
+    return !!token
+  }, [])
 
-  if (!requireAuth && isAuthenticated && location.pathname === '/login') {
-    // 已登录用户访问登录页，重定向到首页
-    return <Navigate to="/" replace />
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(initialAuthState)
+
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    const newAuthState = !!token
+    if (isAuthenticated !== newAuthState) {
+      setIsAuthenticated(newAuthState)
+    }
+  }, [location.pathname, isAuthenticated])
+
+  // 使用 useMemo 缓存重定向组件，避免不必要的重新渲染
+  const redirectComponent = useMemo(() => {
+    if (requireAuth && !isAuthenticated) {
+      return (
+        <Navigate
+          to="/login"
+          state={{ from: location.pathname }}
+          replace
+        />
+      )
+    }
+
+    if (isAuthenticated && location.pathname === '/login') {
+      const from = location.state?.from || '/'
+      return <Navigate to={from} replace />
+    }
+
+    return null
+  }, [requireAuth, isAuthenticated, location.pathname, location.state])
+
+  if (redirectComponent) {
+    return redirectComponent
   }
 
   return <>{children}</>
