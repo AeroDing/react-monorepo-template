@@ -22,7 +22,6 @@
     "bumpp": "catalog:",
     "eslint": "catalog:",
     "lint-staged": "catalog:",
-    "pnpm": "catalog:",
     "simple-git-hooks": "catalog:",
     "tsx": "catalog:",
     "typescript": "catalog:",

@@ -13,16 +13,20 @@ catalog:
   '@types/react': ^19.0.10
   '@types/react-dom': ^19.0.4
   '@vitejs/plugin-react': ^4.3.4
+  ahooks: ^3.8.4
   antd: ^5.24.4
   bumpp: ^10.0.3
+  dayjs: ^1.11.13
   eslint: ^9.20.1
   lint-staged: ^15.4.3
-  pnpm: ^10.5.2
+  motion: ^12.5.0
   react: ^18.3.1
   react-dom: ^18.3.1
   react-hook-form: ^7.54.2
   react-i18next: ^14.1.2
+  react-number-format: ^5.4.3
   react-router-dom: ^6.22.0
+  sass: ^1.72.0
   simple-git-hooks: ^2.11.1
   tsx: ^4.19.2
   typescript: ^5.7.3

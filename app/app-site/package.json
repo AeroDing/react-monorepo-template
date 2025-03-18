@@ -10,9 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "ahooks": "catalog:",
     "antd": "catalog:",
+    "dayjs": "catalog:",
+    "motion": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
+    "react-hook-form": "catalog:",
+    "react-number-format": "catalog:",
     "react-router-dom": "catalog:"
   },
   "devDependencies": {
@@ -20,7 +25,10 @@
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "@vitejs/plugin-react": "catalog:",
+    "sass": "catalog:",
     "typescript": "catalog:",
+    "unocss": "catalog:",
+    "unplugin-auto-import": "catalog:",
     "vite": "catalog:",
     "vite-tsconfig-paths": "catalog:"
   }
