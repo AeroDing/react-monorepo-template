@@ -13,14 +13,18 @@
     "release": "bumpp -r && pnpm -r publish",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
-    "prepare": "simple-git-hooks"
+    "prepare": "simple-git-hooks",
+    "clean": "pnpm -r exec rm -rf node_modules && rm -rf node_modules"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:",
     "@antfu/ni": "catalog:",
+    "@eslint-react/eslint-plugin": "catalog:",
     "@types/node": "catalog:",
     "bumpp": "catalog:",
     "eslint": "catalog:",
+    "eslint-plugin-react-hooks": "catalog:",
+    "eslint-plugin-react-refresh": "catalog:",
     "lint-staged": "catalog:",
     "simple-git-hooks": "catalog:",
     "tsx": "catalog:",
