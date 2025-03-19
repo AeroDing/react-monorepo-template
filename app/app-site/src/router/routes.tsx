@@ -4,6 +4,11 @@ import { Spin } from 'antd'
 import React, { lazy, Suspense } from 'react'
 import { Navigate } from 'react-router-dom'
 
+export enum UserRole {
+  USER = 'user',
+  ADMIN = 'admin',
+}
+
 // 创建加载组件
 function LoadingComponent(): React.ReactElement {
   return (
@@ -36,6 +41,26 @@ Promise.all([
   import('@/views/404'),
 ]).catch(console.error)
 
+// 用户路由
+export const userRoutes: RouteObject[] = [
+  {
+    path: 'projectList',
+    element: lazyLoad(() => import('@/views/projectList'), true),
+  },
+]
+
+// 管理员路由
+export const adminRoutes: RouteObject[] = [
+  {
+    path: 'dashboard',
+    element: lazyLoad(() => import('@/views/admin/dashboard'), true),
+  },
+  {
+    path: 'userManagement',
+    element: lazyLoad(() => import('@/views/admin/userManagement'), true),
+  },
+]
+
 export const routes: RouteObject[] = [
   {
     path: '/login',
@@ -49,10 +74,8 @@ export const routes: RouteObject[] = [
         index: true,
         element: <Navigate to="/projectList" replace />,
       },
-      {
-        path: 'projectList',
-        element: lazyLoad(() => import('@/views/projectList'), true),
-      },
+      ...userRoutes,
+      ...adminRoutes,
     ],
   },
   {
