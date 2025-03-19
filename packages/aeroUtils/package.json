@@ -1,0 +1,36 @@
+{
+  "name": "aero-utils",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "_description_",
+  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/antfu",
+  "homepage": "https://github.com/AeroDing/react-monorepo-template#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AeroDing/react-monorepo-template.git"
+  },
+  "bugs": "https://github.com/AeroDing/react-monorepo-template/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "prepublishOnly": "nr build",
+    "start": "tsx src/index.ts"
+  }
+}
