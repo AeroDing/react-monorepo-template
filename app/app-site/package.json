@@ -14,6 +14,7 @@
     "@ant-design/pro-components": "catalog:",
     "ahooks": "catalog:",
     "antd": "catalog:",
+    "axios": "catalog:",
     "dayjs": "catalog:",
     "motion": "catalog:",
     "react": "catalog:",
