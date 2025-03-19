@@ -12,6 +12,7 @@
   "dependencies": {
     "@ant-design/icons": "catalog:",
     "@ant-design/pro-components": "catalog:",
+    "aero-utils": "workspace:*",
     "ahooks": "catalog:",
     "antd": "catalog:",
     "axios": "catalog:",

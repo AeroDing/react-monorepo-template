@@ -8,6 +8,7 @@
     "build": "nr -r build",
     "dev": "nr -r dev",
     "dev:app-site": "pnpm --filter app-site dev",
+    "build:aero-utils": "pnpm --filter aero-utils build",
     "lint": "eslint --cache .",
     "prepublishOnly": "nr build",
     "release": "bumpp -r && pnpm -r publish",
