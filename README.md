@@ -97,5 +97,28 @@ pnpm install
 - TypeScript 严格模式
 - 统一的依赖版本管理
 
+## Git Commit 规范
+
+提交信息格式: `<type>(<scope>): <subject>`
+
+type 类型:
+- feat: 新功能
+- fix: 修复 bug
+- docs: 文档变更
+- style: 代码格式改变
+- refactor: 代码重构
+- perf: 性能优化
+- test: 测试相关
+- build: 构建系统或外部依赖项的更改
+- ci: CI/CD 相关变更
+- chore: 其他修改
+- revert: 回退提交
+
+scope 影响范围:
+- 表示 commit 影响的范围
+- 比如: route, component, utils, build...
+
+subject 提交说明: ......
+
 ## 7. 许可证
 MIT License
