@@ -1,7 +1,5 @@
 import { routerUtils } from '@/router/utils'
-import { one } from 'aero-utils'
 import { Button, Card, Form, Input, Typography } from 'antd'
-import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const { Title } = Typography
@@ -29,7 +27,6 @@ const Login: React.FC = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      {one}
       <Card className="w-96 shadow-lg">
         <Title level={2} className="text-center mb-8">
           登录

@@ -35,6 +35,7 @@
     "unocss": "catalog:",
     "unplugin-auto-import": "catalog:",
     "vite": "catalog:",
+    "vite-plugin-svgr": "catalog:",
     "vite-tsconfig-paths": "catalog:"
   }
 }
