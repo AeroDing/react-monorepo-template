@@ -26,40 +26,53 @@ const Login: React.FC = () => {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <Card className="w-96 shadow-lg">
-        <Title level={2} className="text-center mb-8">
-          登录
-        </Title>
-        <Form
-          form={form}
-          layout="vertical"
-          onFinish={handleSubmit}
-          autoComplete="off"
-        >
-          <Form.Item
-            label="用户名"
-            name="username"
-            rules={[{ required: true, message: '请输入用户名' }]}
+    <div className="min-h-screen flex">
+      {/* 左侧区域 */}
+      <div className="w-2/3 flex flex-col items-center justify-center bg-gradient-to-tr from-blue-50 to-blue-100">
+        <Icon name="icon-login-logo" className="w-100 h-100 mb-8" />
+        <div className="text-center">
+          <Title level={2}>AI智能管理系统</Title>
+          <p className="text-gray-500 mt-2">
+            高效赋能企业，智能驱动决策，助力业务全面升级
+          </p>
+        </div>
+      </div>
+      {/* 右侧区域 */}
+      <div className="w-1/3 flex items-center justify-center px-10">
+        <Card className="w-96 shadow-lg">
+          <Title level={2} className="text-center mb-8">
+            欢迎回来
+          </Title>
+          <Form
+            form={form}
+            layout="vertical"
+            onFinish={handleSubmit}
+            autoComplete="off"
           >
-            <Input placeholder="请输入用户名" />
-          </Form.Item>
+            <Form.Item
+              label="用户名"
+              name="username"
+              rules={[{ required: true, message: '请输入用户名' }]}
+            >
+              <Input placeholder="请输入用户名" />
+            </Form.Item>
 
-          <Form.Item
-            label="密码"
-            name="password"
-            rules={[{ required: true, message: '请输入密码' }]}
-          >
-            <Input.Password placeholder="请输入密码" />
-          </Form.Item>
+            <Form.Item
+              label="密码"
+              name="password"
+              rules={[{ required: true, message: '请输入密码' }]}
+            >
+              <Input.Password placeholder="请输入密码" />
+            </Form.Item>
 
-          <Form.Item>
-            <Button type="primary" htmlType="submit" block>
-              登录
-            </Button>
-          </Form.Item>
-        </Form>
-      </Card>
+            <Form.Item>
+              <Button type="primary" htmlType="submit" block>
+                登录
+              </Button>
+            </Form.Item>
+          </Form>
+        </Card>
+      </div>
     </div>
   )
 }
