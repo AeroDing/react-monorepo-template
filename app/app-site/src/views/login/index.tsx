@@ -41,7 +41,8 @@ const Login: React.FC = () => {
       <div className="w-1/3 flex items-center justify-center px-10">
         <Card className="w-96 shadow-lg">
           <Title level={2} className="text-center mb-8">
-            欢迎回来
+            欢迎登录
+            <IconFont name="hashiqi" />
           </Title>
           <Form
             form={form}

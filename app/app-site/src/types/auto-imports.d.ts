@@ -7,6 +7,7 @@
 export {}
 declare global {
   const Icon: typeof import('@/icons')['Icon']
+  const IconFont: typeof import('@/icons/IconFont')['IconFont']
   const Link: typeof import('react-router-dom')['Link']
   const NavLink: typeof import('react-router-dom')['NavLink']
   const Navigate: typeof import('react-router-dom')['Navigate']

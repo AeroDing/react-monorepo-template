@@ -17,6 +17,11 @@ export default defineConfig({
       'react-router-dom',
       'ahooks',
       {
+        '@/icons/IconFont': [
+          'IconFont',
+        ],
+      },
+      {
         '@/icons': [
           'Icon',
         ],
