@@ -21,8 +21,7 @@
 - **路由**：react-router-dom 7
 - **HTTP 请求**：axios
 - **国际化**：react-i18next
-- **CSS 预处理器**：Sass
-- **原子化 CSS**：UnoCSS
+- **原子化 CSS**：unocss
 - **Hooks 库**：ahooks
 - **表单处理**：react-hook-form
 

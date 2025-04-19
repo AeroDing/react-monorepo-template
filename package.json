@@ -1,27 +1,34 @@
 {
   "name": "react-monorepo-template",
   "type": "module",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "packageManager": "pnpm@10.5.2",
   "scripts": {
-    "build": "nr -r build",
-    "dev": "nr -r dev",
+    "build": "pnpm -r --parallel build",
+    "dev": "pnpm -r --parallel dev",
     "dev:app-site": "pnpm --filter app-site dev",
     "build:aero-utils": "pnpm --filter aero-utils build",
-    "lint": "eslint --cache .",
+    "lint": "pnpm -r --parallel lint",
     "prepublishOnly": "nr build",
     "release": "bumpp -r && pnpm -r publish",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "prepare": "simple-git-hooks",
-    "clean": "pnpm -r exec rm -rf node_modules && rm -rf node_modules"
+    "clean": "pnpm -r --parallel clean"
+  },
+  "dependencies": {
+    "antd": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:",
     "@antfu/ni": "catalog:",
     "@eslint-react/eslint-plugin": "catalog:",
     "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
     "bumpp": "catalog:",
     "eslint": "catalog:",
     "eslint-plugin-react-hooks": "catalog:",
@@ -29,9 +36,7 @@
     "jsdom": "catalog:",
     "lint-staged": "catalog:",
     "simple-git-hooks": "catalog:",
-    "testing-library/react": "catalog:",
     "tsx": "catalog:",
-    "typescript": "catalog:",
     "unbuild": "catalog:",
     "vite": "catalog:",
     "vitest": "catalog:"
@@ -40,6 +45,6 @@
     "pre-commit": "pnpm lint-staged"
   },
   "lint-staged": {
-    "*": "eslint --fix"
+    "**/*.{ts,tsx,js,jsx,json}": "eslint --fix"
   }
 }

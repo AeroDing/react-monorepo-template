@@ -12,6 +12,7 @@
   "dependencies": {
     "@ant-design/icons": "catalog:",
     "@ant-design/pro-components": "catalog:",
+    "@core/preferences": "workspace:*",
     "aero-utils": "workspace:*",
     "ahooks": "catalog:",
     "antd": "catalog:",
@@ -30,7 +31,6 @@
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "@vitejs/plugin-react": "catalog:",
-    "sass": "catalog:",
     "typescript": "catalog:",
     "unocss": "catalog:",
     "unplugin-auto-import": "catalog:",

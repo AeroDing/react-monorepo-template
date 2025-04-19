@@ -1,0 +1,52 @@
+import type { PreferencesThemeConfig } from '../types/theme'
+
+export const darkTheme: PreferencesThemeConfig = {
+  mode: 'dark',
+  layout: 'default',
+  token: {
+    borderRadius: 6,
+    colorPrimary: '#1668dc',
+    colorBgContainer: '#141414',
+    colorBgElevated: '#1f1f1f',
+    colorBgLayout: '#000000',
+    colorBgBase: '#000000',
+    colorText: 'rgba(255, 255, 255, 0.85)',
+    colorTextSecondary: 'rgba(255, 255, 255, 0.45)',
+    colorBorder: '#424242',
+    colorBorderSecondary: '#303030',
+    colorSuccess: '#49aa19',
+    colorWarning: '#d89614',
+    colorError: '#dc4446',
+    colorInfo: '#1668dc',
+    colorTextBase: '#ffffff',
+    colorBgMask: 'rgba(0, 0, 0, 0.45)',
+    boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02)',
+    boxShadowSecondary: '0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05)',
+    fontSize: 14,
+    wireframe: false,
+  },
+  components: {
+    Button: {
+      controlHeight: 32,
+      paddingContentHorizontal: 16,
+      colorBgContainer: '#141414',
+      colorBgContainerDisabled: 'rgba(255, 255, 255, 0.08)',
+      colorText: 'rgba(255, 255, 255, 0.85)',
+      colorTextDisabled: 'rgba(255, 255, 255, 0.25)',
+    },
+    Input: {
+      controlHeight: 32,
+      paddingContentHorizontal: 12,
+      colorBgContainer: '#141414',
+      colorBorder: '#424242',
+      colorText: 'rgba(255, 255, 255, 0.85)',
+      colorTextPlaceholder: 'rgba(255, 255, 255, 0.25)',
+      colorTextDisabled: 'rgba(255, 255, 255, 0.25)',
+    },
+    Card: {
+      colorBgContainer: '#141414',
+      colorBorderSecondary: '#303030',
+      boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02)',
+    },
+  },
+}
