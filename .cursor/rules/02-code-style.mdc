@@ -1,0 +1,48 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# 代码风格规范
+
+## TypeScript 指南
+
+1. 新代码必须使用 TypeScript
+2. 为 props、state 和函数参数定义明确的类型
+3. 避免使用 `any` 类型 - 使用适当的类型定义
+4. 对象类型使用 interface，联合/交叉类型使用 type
+
+## React 组件规范
+
+1. 使用函数组件和 hooks
+2. Props 接口命名为 `${ComponentName}Props`
+3. 组件使用命名导出
+4. 一个文件只包含一个组件
+5. 组件名使用 PascalCase
+
+## 文件命名规范
+
+- 组件：`PascalCase.tsx`
+- 工具：`camelCase.ts`
+- Hooks：`use${HookName}.ts`
+- 类型：`${type}Types.ts`
+- 测试文件：`${filename}.test.tsx`
+
+## 导入顺序
+
+1. React 和外部库
+2. 内部包
+3. 组件
+4. Hooks
+5. 工具函数
+6. 类型
+7. 样式
+
+## 代码格式化
+
+- 使用 ESLint 进行代码检查
+- 遵循 Prettier 配置
+- 最大行长度：100 字符
+- 使用单引号
+- 使用分号
+- 使用 2 个空格缩进
