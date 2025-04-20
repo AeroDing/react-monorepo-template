@@ -4,9 +4,10 @@ import {
   TranslationOutlined,
 } from '@ant-design/icons'
 import { Button, Space, theme, Tooltip } from 'antd'
-import React, { useMemo } from 'react'
+import React, { useMemo, useState } from 'react'
 import { useTheme } from '../../context/ThemeProvider'
 import { IconFont } from '../../icons/IconFont'
+import { BUILT_IN_THEME_PRESETS } from '../../types/theme'
 
 export interface ToolBarProps {
   className?: string
@@ -19,8 +20,9 @@ export const ToolBar: React.FC<ToolBarProps> = ({
   style,
   onLanguageChange,
 }) => {
-  const { theme: preferences, toggleMode, toggleLayout } = useTheme()
+  const { theme: preferences, toggleMode, toggleLayout, updateTheme } = useTheme()
   const { token } = theme.useToken()
+  const [showThemePresets, setShowThemePresets] = useState(false)
 
   const toolbarStyle = useMemo(() => ({
     backgroundColor: preferences.mode === 'dark'
@@ -43,17 +45,49 @@ export const ToolBar: React.FC<ToolBarProps> = ({
     },
   }), [preferences.mode, token.colorPrimary])
 
+  const handleThemeChange = (color: string): void => {
+    updateTheme({
+      token: {
+        ...preferences.token,
+        colorPrimary: color,
+      },
+    })
+  }
+
   return (
     <div
       className={`flex items-center gap-2 rounded-full p-2 transition-all duration-300 ${className}`}
       style={toolbarStyle}
     >
       <Space>
-        <Button
-          type="text"
-          icon={<IconFont name="theme" size={16} color={token.colorPrimary} />}
-          onClick={toggleMode}
-        />
+        <div
+          className="relative group"
+          onMouseEnter={() => setShowThemePresets(true)}
+          onMouseLeave={() => setShowThemePresets(false)}
+        >
+          <Button
+            type="text"
+            className="theme-button"
+            icon={<IconFont name="theme" size={16} color={token.colorPrimary} />}
+            style={buttonStyle}
+          />
+          <div
+            className={`absolute right-0 top-1/2 flex items-center gap-2 origin-right -translate-y-1/2 transition-all duration-300 bg-white/5 backdrop-blur-md rounded-full p-2 shadow-lg ${showThemePresets
+              ? 'opacity-100 visible scale-x-100 translate-x-10'
+              : 'opacity-0 invisible scale-x-0 translate-x-0'
+            }`}
+          >
+            {BUILT_IN_THEME_PRESETS.slice(0, 6).map(preset => (
+              <Tooltip key={preset.type} title={preset.type}>
+                <button
+                  className="w-5 h-5 rounded-full border-2 border-white/10 cursor-pointer transition-transform duration-300 hover:scale-110 hover:border-white/30 shadow-sm"
+                  style={{ backgroundColor: preset.color }}
+                  onClick={() => handleThemeChange(preset.color)}
+                />
+              </Tooltip>
+            ))}
+          </div>
+        </div>
 
         <Tooltip title={`切换到${preferences.mode === 'light' ? '暗色' : '亮色'}主题`}>
           <Button
