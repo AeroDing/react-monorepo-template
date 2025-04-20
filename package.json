@@ -6,8 +6,9 @@
   "packageManager": "pnpm@10.5.2",
   "scripts": {
     "build": "pnpm -r --parallel build",
-    "dev": "pnpm -r --parallel dev",
-    "dev:app-site": "pnpm --filter app-site dev",
+    "build:packages": "pnpm --filter './packages/**' build",
+    "dev": "pnpm run build:packages && pnpm --filter './app/**' --parallel dev",
+    "dev:app-site": "pnpm run build:packages && pnpm --filter app-site dev",
     "build:aero-utils": "pnpm --filter aero-utils build",
     "node-modules-inspect": "pnpx node-modules-inspector",
     "lint": "pnpm -r --parallel lint",
@@ -16,7 +17,7 @@
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "prepare": "simple-git-hooks",
-    "clean": "pnpm -r --parallel clean"
+    "clean": "pnpm -r exec rm -rf node_modules && rm -rf node_modules"
   },
   "dependencies": {
     "antd": "catalog:",
