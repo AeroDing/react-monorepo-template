@@ -22,7 +22,8 @@
     "skipLibCheck": true
   },
   "include": [
-    "packages/preferences/build.config.ts"
+    "packages/preferences/build.config.ts",
+    "node-modules-inspector.config.ts"
   ],
   "exclude": [
     "**/node_modules",
