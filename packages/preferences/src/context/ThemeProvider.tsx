@@ -101,7 +101,9 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
       components: theme.components,
       algorithm:
         mode === 'dark'
-          ? [antdTheme.darkAlgorithm]
+          ? layout === 'compact'
+            ? [antdTheme.darkAlgorithm, antdTheme.compactAlgorithm]
+            : [antdTheme.darkAlgorithm]
           : layout === 'compact'
             ? [antdTheme.defaultAlgorithm, antdTheme.compactAlgorithm]
             : [antdTheme.defaultAlgorithm],

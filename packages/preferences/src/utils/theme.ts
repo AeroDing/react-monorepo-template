@@ -37,15 +37,27 @@ export function mergeThemes(base: PreferencesThemeConfig, override: Partial<Pref
       : base.components,
   }
 }
-
+/**
+ * 获取预设主题配置
+ * @param preset - 预设主题配置
+ * @returns 预设主题配置
+ */
 export function getPresetTheme(preset: 'default' | 'dark'): PreferencesThemeConfig {
   return preset === 'dark' ? darkTheme : defaultTheme
 }
 
+/**
+ * 检查系统是否为暗色模式
+ * @returns 是否为暗色模式
+ */
 export function isSystemDarkMode(): boolean {
   return window.matchMedia('(prefers-color-scheme: dark)').matches
 }
 
+/**
+ * 获取当前系统主题配置
+ * @returns 当前系统主题配置
+ */
 export function getSystemTheme(): PreferencesThemeConfig {
   return isSystemDarkMode() ? darkTheme : defaultTheme
 }
