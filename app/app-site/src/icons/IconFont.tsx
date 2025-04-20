@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 
 // 1. 定义预设的在线脚本 URL 数组
 const PRESET_ONLINE_SCRIPT_URLS: string[] = [
-  '//at.alicdn.com/t/c/font_4899183_ib7ej50meni.js', // 替换成你的 URL
+  '//at.alicdn.com/t/c/font_4899183_p8x14sr7z1.js', // 替换成你的 URL
 ]
 
 // 3. 从 Props 接口移除 onlineScriptUrls

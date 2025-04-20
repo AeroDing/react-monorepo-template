@@ -1,5 +1,4 @@
 import {
-  BgColorsOutlined,
   CompressOutlined,
   ExpandOutlined,
   TranslationOutlined,
@@ -7,6 +6,7 @@ import {
 import { Button, Space, theme, Tooltip } from 'antd'
 import React, { useMemo } from 'react'
 import { useTheme } from '../../context/ThemeProvider'
+import { IconFont } from '../../icons/IconFont'
 
 export interface ToolBarProps {
   className?: string
@@ -49,10 +49,16 @@ export const ToolBar: React.FC<ToolBarProps> = ({
       style={toolbarStyle}
     >
       <Space>
+        <Button
+          type="text"
+          icon={<IconFont name="theme" size={16} color={token.colorPrimary} />}
+          onClick={toggleMode}
+        />
+
         <Tooltip title={`切换到${preferences.mode === 'light' ? '暗色' : '亮色'}主题`}>
           <Button
             type="text"
-            icon={<BgColorsOutlined />}
+            icon={preferences.mode === 'dark' ? <IconFont name="solar" size={16} /> : <IconFont name="moon" size={16} />}
             onClick={toggleMode}
             style={buttonStyle}
             className="transition-colors duration-300"

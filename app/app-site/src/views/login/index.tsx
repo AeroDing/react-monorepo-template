@@ -84,7 +84,7 @@ const Login: React.FC = () => {
             }}
           >
             欢迎登录
-            <IconFont name="hashiqi" />
+            <IconFont name="hashiqi" size={16} />
           </Title>
           <Form
             form={form}
